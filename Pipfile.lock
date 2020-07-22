@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3a1dda80b99c72d3cc934abe184a769d47385eff3867d95aab444201bca92814"
+            "sha256": "32026c89c3c380ee1c7c3704bb69caa9f6188a4a0b346ac9527d69b8228f1c6e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,7 +15,24 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "aws-wsgi": {
+            "hashes": [
+                "sha256:37e16b6a211f251d9f72ab85018c4127a59dc0fc81263c19f312a6a8333f9908",
+                "sha256:eb0b00970e80d96b52c0806ceae2ff98ab96c90f67651765755c5236f9e6e50d"
+            ],
+            "index": "pypi",
+            "version": "==0.2.7"
+        },
+        "falcon": {
+            "hashes": [
+                "sha256:1147049bf4ebe4779fe4e43b04d6a99681fc45806710c77aef444a142a7c0010",
+                "sha256:5b7982cea338e352188984e258ba85c5ab042122c92bddd97dc873ee02a43de3"
+            ],
+            "index": "pypi",
+            "version": "==3.0.0a1"
+        }
+    },
     "develop": {
         "appdirs": {
             "hashes": [
@@ -52,6 +69,20 @@
                 "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
             ],
             "version": "==7.1.2"
+        },
+        "cloudpickle": {
+            "hashes": [
+                "sha256:820c9245cebdec7257211cbe88745101d5d6a042bca11336d78ebd4897ddbc82",
+                "sha256:994d503de22399a8a09091b091e3850509144ede72977ac475f323096eb72936"
+            ],
+            "version": "==1.5.0"
+        },
+        "doit": {
+            "hashes": [
+                "sha256:323d0411e50a0babb945e2a639aa6e633fbb84a9f98086df0c880e739237750c"
+            ],
+            "index": "pypi",
+            "version": "==0.32.0"
         },
         "iniconfig": {
             "hashes": [
@@ -91,6 +122,12 @@
                 "sha256:f3900e8a5de27447acbf900b4750b0ddfd7ec1ea7fbaf11dfa911141bc522af0"
             ],
             "version": "==1.4.3"
+        },
+        "macfsevents": {
+            "hashes": [
+                "sha256:1324b66b356051de662ba87d84f73ada062acd42b047ed1246e60a449f833e10"
+            ],
+            "version": "==0.8.1"
         },
         "mccabe": {
             "hashes": [
