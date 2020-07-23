@@ -17,3 +17,8 @@ This repository is source code for a proof of concept running Falcon in AWS Lamb
 - Edit `lambda-congif.toml` to use your `function_name` and `profile`
   - `profile` must have correct permissions & match a configured AWS CLI profile
 - To deploy: `doit`
+
+## Local usage
+
+- `python src/service.py`
+- Send GET request to `http://localhost:8000`
