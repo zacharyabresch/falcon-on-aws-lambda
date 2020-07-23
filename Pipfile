@@ -8,10 +8,13 @@ black = "*"
 pylint = "*"
 pytest = "*"
 doit = "*"
+coverage = "*"
+awslogs = "*"
 
 [packages]
 falcon = "*"
 aws-wsgi = "*"
+boto3 = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Falcon on AWS Lambda API
+  description: A proof of concept using Falcon on AWS Lambda to serve API requests
+  version: 0.0.1
+servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+paths:
+  /degs:
+    get:
+      summary: Returns a list of degs
+      description: so many degs
+      responses:
+        "200": # status code
+          description: A JSON array of deg breeds
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    breed:
+                      type: string
