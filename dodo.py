@@ -2,16 +2,18 @@ import os
 import shutil
 import subprocess
 import boto3
+import toml
 
 from zipfile import ZipFile
 
 DOIT_CONFIG = {"verbosity": 2, "default_tasks": ["build", "deploy"]}
+LAMBDA_CONFIG = toml.load("lambda-config.toml")
 
 DIST_DIR = "dist"
 BUILD_DIR = os.path.join(DIST_DIR, "build")
-FUNCTION_NAME = "falcon-on-aws-lambda"
+FUNCTION_NAME = LAMBDA_CONFIG.get("default").get("function_name")
 
-boto3.setup_default_session(profile_name="deploy")
+os.environ["AWS_PROFILE"] = LAMBDA_CONFIG.get("default").get("aws_profile")
 
 
 def task_build():
@@ -51,7 +53,7 @@ def function_exists(client):
         response = client.get_function(FunctionName=FUNCTION_NAME)
         print(response)
         return True
-    except client.exceptions.ResourceNotFound as error:
+    except client.exceptions.ServiceException as error:
         print(error)
         return False
 
@@ -61,7 +63,8 @@ def create_lambda_function(client):
     try:
         # Blah ... this needs IAM junk and I'm too tired for that. I'll create it manually and move on for now.
         client.create_function(
-            FunctionName=FUNCTION_NAME, RunTime="python3.8",
+            FunctionName=FUNCTION_NAME,
+            RunTime=LAMBDA_CONFIG.get("default").get("run_time"),
         )
     except client.exceptions.ServiceException as error:
         print(error)
@@ -108,7 +111,6 @@ def task_tail_logs():
             "--start=2h ago",
             "--watch",
         ]
-        os.environ["AWS_PROFILE"] = "deploy"
         subprocess.run(actions)
 
     return {"actions": [watch]}

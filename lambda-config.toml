@@ -1,0 +1,4 @@
+[default]
+aws_profile = "deploy"
+function_name = "falcon-on-aws-lambda"
+runtime = "python3.8"

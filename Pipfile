@@ -15,6 +15,7 @@ awslogs = "*"
 falcon = "*"
 aws-wsgi = "*"
 boto3 = "*"
+toml = "*"
 
 [requires]
 python_version = "3.8"
