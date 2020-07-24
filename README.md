@@ -2,7 +2,7 @@
 
 This repository is source code for a proof of concept running Falcon in AWS Lambda. The whole shebang is triggered by AWS API Gateway.
 
-***WARNING***: API Gateway _must_ be HTTP and serving payload version 1.0 (2.0 is incompatible with the `aswgi` adapter).
+**_WARNING_**: API Gateway _must_ be HTTP and serving payload version 1.0 (2.0 is incompatible with the `aswgi` adapter).
 
 ## Requirements
 
@@ -22,3 +22,10 @@ This repository is source code for a proof of concept running Falcon in AWS Lamb
 
 - `python src/service.py`
 - Send GET request to `http://localhost:8000`
+
+## Terraform
+
+- cd into `terraform`
+- Initialize: `terraform init -upgrade`
+- Plan: `terraform plan`
+- Apply: `terraform apply`
