@@ -141,3 +141,4 @@ dmypy.json
 .doit.db
 .vscode/
 requirements.txt
+.terraform
