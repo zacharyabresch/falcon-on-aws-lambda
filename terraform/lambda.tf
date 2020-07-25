@@ -14,4 +14,5 @@ resource "aws_lambda_function" "this" {
   role          = aws_iam_role.this.arn
   handler       = "src.service.handler"
   runtime       = "python3.8"
+  publish       = true
 }
