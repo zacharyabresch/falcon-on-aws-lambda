@@ -17,3 +17,12 @@ resource "aws_iam_role" "this" {
 }
 EOF
 }
+
+resource "aws_lambda_permission" "api_gateway" {
+  statement_id  = "AllowAPIGatewayInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.this.arn
+  principal     = "apigateway.amazonaws.com"
+
+  source_arn = "${aws_api_gateway_deployment.this.execution_arn}/*/*"
+}

@@ -7,6 +7,7 @@ data "archive_file" "dummy" {
     filename = "dummy.txt"
   }
 }
+
 resource "aws_lambda_function" "this" {
   filename      = data.archive_file.dummy.output_path
   function_name = "falcon-on-aws-lambda"
