@@ -19,7 +19,7 @@ class DogsResource:
         response.media = DEGS
 
 
-app = falcon.App()
+app = falcon.API()
 dogs = DogsResource()
 app.add_route("/degs", dogs)
 
